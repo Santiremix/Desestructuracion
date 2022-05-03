@@ -42,11 +42,10 @@ const addOnlyNums = arrayFiltrada.reduce((a,b)=> a + b);
 console.log(addOnlyNums)
 
 //countTheArgs -- Cuantos argumentos se han recibido
-let data = ['hola', 'hello', true, 44]
-function countTheArgs(e){
-    console.log(`Se han recibido ${e.length} elementos.`)
+function countTheArgs(...args){
+  console.log(`Se han recibido ${args.length} elementos.`)
 }
-countTheArgs(data);
+countTheArgs('hola', 'hello', 8, true, 44);
 
 //Juntar dos arrays
 let arr1 = [3, 5, 'Hola'];
