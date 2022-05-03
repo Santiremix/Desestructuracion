@@ -60,8 +60,78 @@ console.log(concatenarArray)
 }
 combineTwoArrays(arr1, arr2);
 
+// -----Extras----- //
+
+//Modificar líneas desestructurando
+const HIGH_TEMPERATURES = {
+    yesterday: 30,
+    today: 35,
+    tomorrow: 32,
+  };
+const {yesterday:ayer, today:hoy, tomorrow:mañana} = HIGH_TEMPERATURES;
+let maximaHoy = hoy;
+let maximaMañana = mañana;
+console.log(maximaHoy);
+console.log(maximaMañana);
+
+//Eliminar elementos repetidos
+let arrayRepes = [3, 3, 5, 'Hola', 'Saludos', 'Hola', false, 11];
+let onlyUniques = arrayRepes.filter((item,index)=>{
+    return arrayRepes.indexOf(item) === index;
+  })
+console.log(onlyUniques);
+
+//Combinar cualquier cantidad de Arrays
+let arrr1 = [1, 2];
+let arrr2 = [3, 4];
+let arrr3 = [5, 6];
+let arrr4 = [7, 8];
+
+function combineAllArrays(...argumentos){
+const conc = argumentos.reduce((a,b)=> a.concat(b))
+console.log(conc)
+}
+
+combineAllArrays (arrr1, arrr2, arrr3);
+
+//Cuadrado de cada elemento y sumarlos todos
+
+function sumAndSquare(...args){
+  let potencia = args.map((a) => {
+    return a * a;
+})
+  let suma = potencia.reduce((a, b) => {
+    return a + b;
+  })
+console.log(potencia);
+console.log(suma);
+}
+sumAndSquare(2, 3);
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const prueba = (...articulos) => { 
+// console.log(...articulos);
+// console.log([...articulos[0]])
+// }
+
+// prueba(arrr1, arrr2, arrr3)
