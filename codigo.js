@@ -24,13 +24,11 @@ console.log('a = ' + a + ' y b = ' + b)
 // -----Ejercicios spread/rest----- //
 
 //Funcion que devuelva el sumatorio de los elementos
-let numbers = [6, 8, 2, 3, 1];
-const sumEveryOther = numbers.reduce((a,b)=> a + b);
-console.log(sumEveryOther);
-
-let numbers2 = [11, 3, 12];
-const sumEveryOther2 = numbers2.reduce((a,b)=> a + b);
-console.log(sumEveryOther2); //Hacer una sola función
+function sumEveryOther(...args){
+  const sumEveryOther = args.reduce((a,b)=> a + b);
+  console.log(sumEveryOther);
+}
+sumEveryOther(100, 50)
 
 //Funcion que sume los numeros sin importar que tipo de datos reciba
 
@@ -43,7 +41,7 @@ let arrayFiltrada = onlyNum(arr);
 const addOnlyNums = arrayFiltrada.reduce((a,b)=> a + b);
 console.log(addOnlyNums)
 
-//countTheArgs => Cuantos argumentos se han recibido
+//countTheArgs -- Cuantos argumentos se han recibido
 let data = ['hola', 'hello', true, 44]
 function countTheArgs(e){
     console.log(`Se han recibido ${e.length} elementos.`)
@@ -107,31 +105,3 @@ console.log(potencia);
 console.log(suma);
 }
 sumAndSquare(2, 3);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const prueba = (...articulos) => { 
-// console.log(...articulos);
-// console.log([...articulos[0]])
-// }
-
-// prueba(arrr1, arrr2, arrr3)
