@@ -15,10 +15,13 @@ console.log(e1.email)
 //Intercambiar los valores de a y b
 let a = 5;
 let b = 3;
-const a_ = b;
-const b_ = a;
-a = a_;
-b = b_;
+// const a_ = b;
+// const b_ = a;
+// a = a_;
+// b = b_;
+
+[a, b] = [b, a];
+
 console.log('a = ' + a + ' y b = ' + b)
 
 // -----Ejercicios spread/rest----- //
@@ -34,12 +37,11 @@ sumEveryOther(100, 50)
 
 let arr = [1, 'perro', 2, 'Alberto', true, 99, 4];
 function onlyNum(e) {
-        return e.filter(datos => typeof datos === "number");
-      }
-console.log(onlyNum(arr))
-let arrayFiltrada = onlyNum(arr);
-const addOnlyNums = arrayFiltrada.reduce((a,b)=> a + b);
-console.log(addOnlyNums)
+  let arrayFiltrada = e.filter(datos => typeof datos === "number");
+    const addOnlyNums = arrayFiltrada.reduce((a,b)=> a + b);
+    console.log('Suma de solo los numeros: ' + addOnlyNums + '.')
+}
+onlyNum(arr);
 
 //countTheArgs -- Cuantos argumentos se han recibido
 function countTheArgs(...args){
@@ -48,7 +50,7 @@ function countTheArgs(...args){
 countTheArgs('hola', 'hello', 8, true, 44);
 
 //Juntar dos arrays
-let arr1 = [3, 5, 'Hola'];
+let arr1 = [3, 5, 'Queen'];
 let arr2 = [66, 'Gus', false];
 
 function combineTwoArrays(a, b){
